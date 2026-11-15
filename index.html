@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORBITAL COMMAND | Space Mission Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ORBITAL <span>COMMAND</span></div>
+    <div class="status">
+        <span class="status-dot"></span>
+        SYSTEM ONLINE
+    </div>
+</header>
+
+<main>
+
+    <!-- HOME SCREEN -->
+
+    <section id="home-screen" class="hero">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">SPACE MISSION DESIGN PROGRAM</p>
+
+            <h1>
+                DESIGN YOUR<br>
+                <span>OWN MISSION.</span>
+            </h1>
+
+            <p class="description">
+                You are the mission director. Design a spacecraft,
+                select scientific instruments, manage your resources
+                and explore the solar system.
+            </p>
+
+            <button id="start-button" class="primary-button">
+                START MISSION →
+            </button>
+
+        </div>
+
+        <div class="hero-info">
+            <div>
+                <span>AVAILABLE FUNDING</span>
+                <strong>$500M</strong>
+            </div>
+
+            <div>
+                <span>MISSION DESTINATIONS</span>
+                <strong>03</strong>
+            </div>
+
+            <div>
+                <span>MISSION DIFFICULTY</span>
+                <strong>VARIABLE</strong>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- MISSION SELECTION -->
+
+    <section id="mission-screen" class="game-screen hidden">
+
+        <div class="section-heading">
+            <p class="eyebrow">PHASE 01 / MISSION SELECTION</p>
+            <h2>Choose your destination</h2>
+            <p>Select a scientific objective for your mission.</p>
+        </div>
+
+        <div class="mission-grid">
+
+            <div class="mission-card">
+                <div class="mission-image moon-image"></div>
+
+                <div class="card-content">
+                    <span class="mission-tag">LEVEL 01 / BEGINNER</span>
+                    <h3>LUNAR EXPLORATION</h3>
+                    <p>
+                        Explore the Moon's surface, study its geology
+                        and search for evidence of water ice.
+                    </p>
+
+                    <div class="mission-details">
+                        <span>EST. COST</span>
+                        <strong>$100M</strong>
+                    </div>
+
+                    <button class="select-mission" data-mission="moon">
+                        SELECT MISSION →
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="mission-card">
+                <div class="mission-image mars-image"></div>
+
+                <div class="card-content">
+                    <span class="mission-tag">LEVEL 02 / INTERMEDIATE</span>
+                    <h3>MARS EXPEDITION</h3>
+                    <p>
+                        Send a robotic rover to investigate the Martian
+                        surface and search for signs of ancient life.
+                    </p>
+
+                    <div class="mission-details">
+                        <span>EST. COST</span>
+                        <strong>$250M</strong>
+                    </div>
+
+                    <button class="select-mission" data-mission="mars">
+                        SELECT MISSION →
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="mission-card">
+                <div class="mission-image space-image"></div>
+
+                <div class="card-content">
+                    <span class="mission-tag">LEVEL 03 / ADVANCED</span>
+                    <h3>DEEP SPACE</h3>
+                    <p>
+                        Study distant planetary environments and
+                        investigate the outer solar system.
+                    </p>
+
+                    <div class="mission-details">
+                        <span>EST. COST</span>
+                        <strong>$350M</strong>
+                    </div>
+
+                    <button class="select-mission" data-mission="deepSpace">
+                        SELECT MISSION →
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SPACECRAFT DESIGN -->
+
+    <section id="design-screen" class="game-screen hidden">
+
+        <div class="section-heading">
+            <p class="eyebrow">PHASE 02 / SPACECRAFT ENGINEERING</p>
+            <h2>Build your spacecraft</h2>
+            <p id="design-mission-description">
+                Configure your spacecraft to accomplish your mission.
+            </p>
+        </div>
+
+
+        <!-- RESOURCE DASHBOARD -->
+
+        <div class="resource-dashboard">
+
+            <div class="resource-box">
+                <span>REMAINING BUDGET</span>
+                <h3 id="budget-display">$500M</h3>
+            </div>
+
+            <div class="resource-box">
+                <span>SPACECRAFT MASS</span>
+                <h3 id="mass-display">0 kg</h3>
+            </div>
+
+            <div class="resource-box">
+                <span>POWER AVAILABLE</span>
+                <h3 id="power-display">0 W</h3>
+            </div>
+
+            <div class="resource-box">
+                <span>SCIENCE VALUE</span>
+                <h3 id="science-display">0</h3>
+            </div>
+
+        </div>
+
+
+        <!-- COMPONENT SELECTION -->
+
+        <div class="design-section">
+
+            <div class="section-title">
+                <h3>01. Spacecraft components</h3>
+                <p>Choose the systems needed to operate your spacecraft.</p>
+            </div>
+
+            <div class="component-grid" id="component-options">
+
+                <!-- JavaScript will generate components here -->
+
+            </div>
+
+        </div>
+
+
+        <!-- INSTRUMENT SELECTION -->
+
+        <div class="design-section">
+
+            <div class="section-title">
+                <h3>02. Scientific instruments</h3>
+                <p>Select instruments to collect scientific information.</p>
+            </div>
+
+            <div class="component-grid" id="instrument-options">
+
+                <!-- JavaScript will generate instruments here -->
+
+            </div>
+
+        </div>
+
+
+        <!-- SELECTED COMPONENTS -->
+
+        <div class="selected-panel">
+
+            <h3>Your spacecraft configuration</h3>
+
+            <div id="selected-items">
+                <p>No components selected yet.</p>
+            </div>
+
+        </div>
+
+
+        <div class="navigation-buttons">
+
+            <button id="back-to-missions" class="secondary-button">
+                ← BACK TO MISSIONS
+            </button>
+
+            <button id="continue-launch" class="primary-button">
+                CONTINUE TO LAUNCH →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- LAUNCH CONFIGURATION -->
+
+    <section id="launch-screen" class="game-screen hidden">
+
+        <div class="section-heading">
+            <p class="eyebrow">PHASE 03 / LAUNCH CONFIGURATION</p>
+            <h2>Prepare for launch</h2>
+            <p>Select a launch vehicle capable of carrying your spacecraft.</p>
+        </div>
+
+
+        <div class="resource-dashboard">
+
+            <div class="resource-box">
+                <span>SPACECRAFT MASS</span>
+                <h3 id="launch-mass">0 kg</h3>
+            </div>
+
+            <div class="resource-box">
+                <span>AVAILABLE BUDGET</span>
+                <h3 id="launch-budget">$0M</h3>
+            </div>
+
+        </div>
+
+
+        <div class="launch-options" id="rocket-options">
+
+            <!-- JavaScript will generate launch vehicles here -->
+
+        </div>
+
+
+        <div class="launch-summary">
+
+            <h3>Mission readiness</h3>
+
+            <div id="readiness-checks">
+                <p>Complete your spacecraft configuration first.</p>
+            </div>
+
+        </div>
+
+
+        <div class="navigation-buttons">
+
+            <button id="back-to-design" class="secondary-button">
+                ← BACK TO DESIGN
+            </button>
+
+            <button id="launch-mission" class="primary-button" disabled>
+                INITIATE LAUNCH 🚀
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MISSION SIMULATION -->
+
+    <section id="simulation-screen" class="game-screen hidden">
+
+        <div class="section-heading">
+            <p class="eyebrow">PHASE 04 / MISSION OPERATIONS</p>
+            <h2>Mission in progress</h2>
+            <p>Your spacecraft is beginning its mission.</p>
+        </div>
+
+
+        <div class="simulation-panel">
+
+            <div class="simulation-visual" id="simulation-visual">
+                <div class="orbit-circle"></div>
+                <div class="simulation-planet" id="simulation-planet">🌍</div>
+                <div class="simulation-rocket">🚀</div>
+            </div>
+
+            <div class="simulation-info">
+
+                <h3 id="simulation-title">MISSION INITIALISATION</h3>
+
+                <div class="progress-track">
+                    <div id="mission-progress" class="progress-fill"></div>
+                </div>
+
+                <p id="simulation-message">
+                    Preparing spacecraft systems...
+                </p>
+
+                <div id="mission-events" class="mission-events">
+                    <p>Waiting for mission events...</p>
+                </div>
+
+                <button id="next-event" class="primary-button hidden">
+                    CONTINUE SIMULATION →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL MISSION REPORT -->
+
+    <section id="report-screen" class="game-screen hidden">
+
+        <div class="section-heading">
+            <p class="eyebrow">PHASE 05 / MISSION EVALUATION</p>
+            <h2>Mission report</h2>
+            <p>Your mission performance has been evaluated.</p>
+        </div>
+
+
+        <div class="report-result">
+
+            <div class="report-score">
+                <span>FINAL MISSION SCORE</span>
+                <h1 id="final-score">0</h1>
+                <p id="mission-result">MISSION RESULT</p>
+            </div>
+
+            <div class="report-details">
+
+                <div>
+                    <span>DESTINATION</span>
+                    <strong id="report-destination">-</strong>
+                </div>
+
+                <div>
+                    <span>SCIENCE ACHIEVED</span>
+                    <strong id="report-science">-</strong>
+                </div>
+
+                <div>
+                    <span>REMAINING BUDGET</span>
+                    <strong id="report-budget">-</strong>
+                </div>
+
+                <div>
+                    <span>SPACECRAFT MASS</span>
+                    <strong id="report-mass">-</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="report-feedback">
+
+            <h3>Mission analysis</h3>
+
+            <div id="report-feedback-content">
+                <!-- JavaScript will generate mission feedback here -->
+            </div>
+
+        </div>
+
+
+        <div class="navigation-buttons">
+
+            <button id="restart-game" class="primary-button">
+                DESIGN ANOTHER MISSION ↻
+            </button>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+    ORBITAL COMMAND © 2026 | SPACE MISSION SIMULATOR
+    <p>AN EDUCATIONAL SPACE ENGINEERING GAME</p>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
